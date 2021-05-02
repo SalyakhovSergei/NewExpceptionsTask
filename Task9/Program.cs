@@ -33,20 +33,23 @@ namespace Task9
                 {
                     throw myException;
                 }
+                else
+                {
+                    for (int x = 1; x < 5; x++)
+                    {
+                        throw exceptionArray[x];
+                    }
+                }
 
                 Console.WriteLine(i / j);
-                throw exceptionArray[1];
-                throw exceptionArray[2];
-                throw exceptionArray[3];
-                throw exceptionArray[4];
             }
             catch (Exception ex) when (ex is FormatException)
             {
                 Console.WriteLine(exceptionArray[2].Message);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine(myException.Message);
+                Console.WriteLine(ex.Message);
                 
             }
 
